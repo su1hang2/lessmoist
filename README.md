@@ -1,6 +1,10 @@
 # lessmoist
 Enhancements for LaTeX on top of tufte-handout, optimised for note taking and everyday use.
 
+aka how to create non-shitty looking LaTeX documents, fast.
+
+![](https://cloud.githubusercontent.com/assets/7192233/20408520/db112638-ace3-11e6-94ba-02be9db2d942.png)
+
 ## Requirements
 
 Other than the packages listed with \RequirePackage, this will probably not work unless you're using the [tufte-handout](https://www.ctan.org/pkg/tufte-latex?lang=en) document class.
@@ -38,5 +42,7 @@ Now, to start the auto-build process, simply type
 Feel free to change `texset` to an alias of your choosing.
 
 Assuming you're using Skim, your view of the pdf will now auto-update every time you press save in your text editor.
+
+While working with LaTeX, I like to use [Split View](https://support.apple.com/en-us/HT204948) so that I have the raw on the left, and the pdf on the right.
 
 Happy LaTeXing!
