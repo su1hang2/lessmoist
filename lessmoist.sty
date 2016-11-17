@@ -1,0 +1,133 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{lessmoist}
+
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{mathdots}
+\RequirePackage[makeroom]{cancel}
+\RequirePackage{bbm}
+\RequirePackage{bm}
+\RequirePackage{soul}
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+
+\RequirePackage[none]{hyphenat}
+
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{0em}%
+  \setlength{\JustifyingParindent}{0em}%
+  \setlength{\parindent}{0em}%
+  \setlength{\parskip}{1em}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0em}%
+  \setlength{\JustifyingParindent}{0em}%
+  \setlength{\parindent}{0em}%
+  \setlength{\parskip}{1em}%
+}
+\makeatother
+
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+  \edef\arraystretch{#1}%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols c}}
+\makeatother
+
+\RequirePackage{enumitem}
+\setlist[enumerate]{label=(\alph*), style=multiline, leftmargin=1.5pc}
+\setlist[enumerate]{label=(\alph*), style=multiline, leftmargin=1.5pc}
+
+\RequirePackage{hyperref}
+
+\RequirePackage[sc,osf]{mathpazo}
+\linespread{1.05}         % Palladio needs more leading (space between lines)
+\RequirePackage[T1]{fontenc}
+
+\newenvironment{theorem}
+    {\vspace{0.5em}\noindent \smallcaps{Theorem}}
+    {}
+\newenvironment{corollary}
+    {\vspace{0.5em}\noindent \smallcaps{Corollary}}
+    {}
+\newenvironment{lemma}
+    {\vspace{0.5em}\noindent \smallcaps{Lemma}}
+    {}
+\newenvironment{definition}
+    {\vspace{0.5em}\noindent \smallcaps{Definition}}
+    {}
+\newenvironment{proof}
+    {\noindent \emph{Proof.}}
+    {\qed\vspace{1em}}
+\newenvironment{remark}
+    {\vspace{0.5em}\noindent \smallcaps{Remark}}
+    {}
+\newenvironment{example}
+    {\vspace{0.5em}\noindent \smallcaps{Example}}
+    {}
+\newenvironment{exercise}
+    {\vspace{0.5em}\noindent \smallcaps{Exercise}}
+    {}
+\newenvironment{question}
+    {\vspace{0.5em}\noindent \smallcaps{Question}}
+    {}
+\newenvironment{answer}
+    {\vspace{0.5em}\noindent \smallcaps{Answer}}
+    {}
+
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\det}[1]{\left|#1\right|}
+\newcommand{\p}[1]{\left(#1\right)}
+\renewcommand{\b}[1]{\left[ #1 \right]}
+\newcommand{\B}[1]{\left\{#1\right\}}
+\newcommand{\inner}[1]{\left\langle#1\right\rangle}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\Bmat}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\Vmat}[1]{\begin{Vmatrix}#1\end{Vmatrix}}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\smat}[1]{\begin{smallmatrix}#1\end{smallmatrix}}
+\newcommand{\cs}[1]{\begin{cases}#1\end{cases}}
+\newcommand{\psub}[1]{{}_{#1}\!}
+\newcommand{\naturalnumbers}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\qed}{\hfill\blacksquare}
+\newcommand{\alignbreak}{\\ \nonumber &\qquad}
+\renewcommand{\d}{\,\text{d}}
+\newcommand{\Rint}{\mathcal{R}}
+\renewcommand{\v}[1]{\mathbf{#1}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersection}{\cap}
+\newcommand{\Intersection}{\bigcap}
+\renewcommand{\vec}[1]{\bm{\mathrm{#1}}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\normal}{\mathcal{N}}
+\newcommand{\uniform}{\mathcal{U}}
+
+\DeclareMathOperator{\prox}{prox}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Expo}{Expo}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\Geom}{Geom}
+
+\RequirePackage{graphicx}
+
+\endinput
