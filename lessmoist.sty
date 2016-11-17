@@ -49,6 +49,8 @@
 \linespread{1.05}         % Palladio needs more leading (space between lines)
 \RequirePackage[T1]{fontenc}
 
+% Define math environments
+% e.g. \begin{theorem} blah \end{theorem}
 \newenvironment{theorem}
     {\vspace{0.5em}\noindent \smallcaps{Theorem}}
     {}
@@ -80,15 +82,18 @@
     {\vspace{0.5em}\noindent \smallcaps{Answer}}
     {}
 
-\newcommand{\norm}[1]{\left\|#1\right\|}
-\newcommand{\abs}[1]{\left|#1\right|}
-\renewcommand{\det}[1]{\left|#1\right|}
-\newcommand{\p}[1]{\left(#1\right)}
-\renewcommand{\b}[1]{\left[ #1 \right]}
-\newcommand{\B}[1]{\left\{#1\right\}}
-\newcommand{\inner}[1]{\left\langle#1\right\rangle}
-\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
-\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+% Shortcuts to math commands to make notetaking easier
+\newcommand{\norm}[1]{\left\|#1\right\|} % auto-sized norm
+\newcommand{\abs}[1]{\left|#1\right|} % auto-sized absolute signs
+\renewcommand{\det}[1]{\left|#1\right|} % auto-sized determinant sign
+\newcommand{\p}[1]{\left(#1\right)} % auto-sized parentheses
+\renewcommand{\b}[1]{\left[ #1 \right]} % auto-sized brackets
+\newcommand{\B}[1]{\left\{#1\right\}} % auto-sized braces
+\newcommand{\inner}[1]{\left\langle#1\right\rangle} % auto-sized angled brackets
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor} % auto-sized floor signs
+
+% shortcuts for matrices
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}} 
 \newcommand{\Bmat}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
 \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
 \newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
@@ -96,29 +101,35 @@
 \newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
 \newcommand{\smat}[1]{\begin{smallmatrix}#1\end{smallmatrix}}
 \newcommand{\cs}[1]{\begin{cases}#1\end{cases}}
-\newcommand{\psub}[1]{{}_{#1}\!}
-\newcommand{\naturalnumbers}{\mathbb{N}}
+
+% shortcuts for commonly used sets of numbers
+\newcommand{\naturalnumbers}{\mathbb{N}} 
 \newcommand{\integers}{\mathbb{Z}}
 \newcommand{\rationals}{\mathbb{Q}}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\complex}{\mathbb{C}}
 \newcommand{\qed}{\hfill\blacksquare}
-\newcommand{\alignbreak}{\\ \nonumber &\qquad}
-\renewcommand{\d}{\,\text{d}}
-\newcommand{\Rint}{\mathcal{R}}
-\renewcommand{\v}[1]{\mathbf{#1}}
-\renewcommand{\P}{\mathbb{P}}
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\I}{\mathbb{I}}
-\newcommand{\union}{\cup}
-\newcommand{\Union}{\bigcup}
-\newcommand{\intersection}{\cap}
-\newcommand{\Intersection}{\bigcap}
-\renewcommand{\vec}[1]{\bm{\mathrm{#1}}}
-\newcommand{\bigO}{\mathcal{O}}
-\newcommand{\normal}{\mathcal{N}}
-\newcommand{\uniform}{\mathcal{U}}
 
+% shortcut for putting a nice looking newline in align environments
+\newcommand{\alignbreak}{\\ \nonumber &\qquad}
+\newcommand{\psub}[1]{{}_{#1}\!} % allow for a subscript before a variable
+
+\renewcommand{\d}{\,\text{d}} % nicer looking differential operator
+\newcommand{\Rint}{\mathcal{R}} % Riemann integrable
+\renewcommand{\v}[1]{\mathbf{#1}} % vector
+\renewcommand{\P}{\mathbb{P}} % probability
+\newcommand{\E}{\mathbb{E}} % expectation
+\newcommand{\I}{\mathbb{I}} % identity
+\newcommand{\union}{\cup} % actually have a union command
+\newcommand{\Union}{\bigcup} % actually have a union command
+\newcommand{\intersection}{\cap} % actually have an intersection command
+\newcommand{\Intersection}{\bigcap} % actually have an intersection command
+
+\newcommand{\bigO}{\mathcal{O}} % big o
+\newcommand{\normal}{\mathcal{N}} % normal distribution
+\newcommand{\uniform}{\mathcal{U}} % uniform distribution
+
+% declare math operators so that you don't have to keep doing \text{blah}
 \DeclareMathOperator{\prox}{prox}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\Var}{Var}
