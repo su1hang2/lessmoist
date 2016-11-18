@@ -19,7 +19,7 @@ As requested, here are instructions on how to have LaTeX wrapped around your lit
 
 `lessmoist.sty` is _not_ required in order to have hot-reloading enabled.
 
-Warning: these instructions are in beta; I might have completely forgot to mention some vital step. Create an issue or shoot me a note if that happens.
+Warning: these instructions are in beta; I might have completely forgotten to mention some vital step. Create an issue or shoot me a note if that happens.
 
 Make sure you have [latexmk](https://www.ctan.org/pkg/latexmk/?lang=en) installed. latexmk auto-builds your LaTeX for you whenever you touch any of your source documents.
 
