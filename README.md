@@ -7,7 +7,7 @@ aka how to create non-shitty looking LaTeX documents, fast.
 
 ## Requirements
 
-Other than the packages listed with \RequirePackage, this will probably not work unless you're using the [tufte-handout](https://www.ctan.org/pkg/tufte-latex?lang=en) document class.
+Other than the needed packages listed with \RequirePackage, this will also probably not work unless you're using the [tufte-handout](https://www.ctan.org/pkg/tufte-latex?lang=en) document class.
 
 ## Installation
 
