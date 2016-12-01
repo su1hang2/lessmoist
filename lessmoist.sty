@@ -84,7 +84,9 @@
 
 % Shortcuts to math commands to make notetaking easier
 \newcommand{\norm}[1]{\left\|#1\right\|} % auto-sized norm
+\newcommand{\unnorm}[1]{\|#1\|} % normal sized norm
 \newcommand{\abs}[1]{\left|#1\right|} % auto-sized absolute signs
+\newcommand{\aunbs}[1]{=|#1|} % normal sized absolute signs
 \renewcommand{\det}[1]{\left|#1\right|} % auto-sized determinant sign
 \newcommand{\p}[1]{\left(#1\right)} % auto-sized parentheses
 \renewcommand{\b}[1]{\left[ #1 \right]} % auto-sized brackets
@@ -112,8 +114,10 @@
 
 % shortcut for putting a nice looking newline in align environments
 \newcommand{\alignbreak}{\\ \nonumber &\qquad}
-\newcommand{\psub}[1]{{}_{#1}\!} % allow for a subscript before a variable
+% number only one line in a *-ed environment
+\newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
 
+\newcommand{\psub}[1]{{}_{#1}\!} % allow for a subscript before a variable
 \renewcommand{\d}{\,\text{d}} % nicer looking differential operator
 \newcommand{\Rint}{\mathcal{R}} % Riemann integrable
 \renewcommand{\v}[1]{\mathbf{#1}} % vector
