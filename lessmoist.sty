@@ -3,6 +3,7 @@
 
 \RequirePackage{amsmath,amssymb}
 \RequirePackage{mathdots}
+\RequirePackage{mathtools}
 \RequirePackage[makeroom]{cancel}
 \RequirePackage{bbm}
 \RequirePackage{bm}
@@ -143,6 +144,18 @@
 \DeclareMathOperator{\Expo}{Expo}
 \DeclareMathOperator{\Poisson}{Poisson}
 \DeclareMathOperator{\Geom}{Geom}
+
+% support for hyperbolic trigonometric functions
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+
+% enable margin notes for equations
+\let\Tuftemarginnote\marginnote
+\let\marginnote\relax
+\RequirePackage{marginnote}
+\let\MarginNote\marginnote
+\let\marginnote\Tuftemarginnote
+\newcommand{\explain}[1]{\tag*{\MarginNote{#1}}}
 
 \RequirePackage{graphicx}
 
