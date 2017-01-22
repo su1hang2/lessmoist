@@ -10,7 +10,8 @@
 \RequirePackage{soul}
 \RequirePackage{algorithm}
 \RequirePackage{algorithmic}
-
+\RequirePackage{CJKutf8}
+\usepackage{url}
 \RequirePackage[none]{hyphenat}
 
 \makeatletter
@@ -94,6 +95,7 @@
 \newcommand{\B}[1]{\left\{#1\right\}} % auto-sized braces
 \newcommand{\inner}[1]{\left\langle#1\right\rangle} % auto-sized angled brackets
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor} % auto-sized floor signs
+\newcommand{\sfrac}[2]{{}^{#1}\!/_{\!#2}} % slashed fractions
 
 % shortcuts for matrices
 \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}} 
@@ -115,21 +117,33 @@
 
 % shortcut for putting a nice looking newline in align environments
 \newcommand{\alignbreak}{\\ \nonumber &\qquad}
+\newcommand{\unalignbreak}{\\ &\qquad}
+% a better spaced bar
+\newcommand{\given}{\,\middle|\,}
+\newcommand{\ungiven}{\,|\,}
 % number only one line in a *-ed environment
 \newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
 
 \newcommand{\psub}[1]{{}_{#1}\!} % allow for a subscript before a variable
-\renewcommand{\d}{\,\text{d}} % nicer looking differential operator
+\renewcommand{\d}[1]{\,\text{d} #1} % nicer looking differential operator
 \newcommand{\Rint}{\mathcal{R}} % Riemann integrable
 \renewcommand{\v}[1]{\mathbf{#1}} % vector
+\renewcommand{\t}[1]{\textsf{#1}} % tensor
 \renewcommand{\P}{\mathbb{P}} % probability
 \newcommand{\E}{\mathbb{E}} % expectation
-\newcommand{\I}{\mathbb{I}} % identity
+\renewcommand{\L}{\mathcal{L}} % laplace / lagrangian
+\newcommand{\J}{\v J} % jacobian
+\renewcommand{\I}{\mathbb{I}} % identity
 \newcommand{\1}{\mathbb{1}} % indicator function
 \newcommand{\union}{\cup} % actually have a union command
 \newcommand{\Union}{\bigcup} % actually have a union command
 \newcommand{\intersection}{\cap} % actually have an intersection command
 \newcommand{\Intersection}{\bigcap} % actually have an intersection command
+\renewcommand{\-}[1]{\overline{#1}} % easier overlines
+\let\existstemp\exists
+\let\foralltemp\forall
+\renewcommand{\exists}{{\existstemp~}} % better spaced exists
+\renewcommand{\forall}{{\foralltemp~}} % better spaced forall
 
 \newcommand{\bigO}{\mathcal{O}} % big o
 \newcommand{\normal}{\mathcal{N}} % normal distribution
@@ -138,6 +152,7 @@
 % declare math operators so that you don't have to keep doing \text{blah}
 \DeclareMathOperator{\prox}{prox}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\erf}{erf}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Tr}{Tr}
@@ -149,13 +164,8 @@
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
 
-% enable margin notes for equations
-\let\Tuftemarginnote\marginnote
-\let\marginnote\relax
-\RequirePackage{marginnote}
-\let\MarginNote\marginnote
-\let\marginnote\Tuftemarginnote
-\newcommand{\explain}[1]{\tag*{\MarginNote{#1}}}
+% enable notes for equations
+\newcommand{\alignexplain}[1]{&&\text{\footnotesize{#1}}}
 
 \RequirePackage{graphicx}
 
