@@ -7,11 +7,12 @@
 \RequirePackage[makeroom]{cancel}
 \RequirePackage{bbm}
 \RequirePackage{bm}
+\RequirePackage{nth}
 \RequirePackage{soul}
 \RequirePackage{algorithm}
 \RequirePackage{algorithmic}
 \RequirePackage{CJKutf8}
-\usepackage{url}
+\RequirePackage{url}
 \RequirePackage[none]{hyphenat}
 
 \makeatletter
@@ -98,6 +99,9 @@
 \newcommand{\inner}[1]{\left\langle#1\right\rangle} % auto-sized angled brackets
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor} % auto-sized floor signs
 \newcommand{\sfrac}[2]{{}^{#1}\!/_{\!#2}} % slashed fractions
+\newcommand{\evalat}[2]{\left. #1 \right\rvert_{#2}} % evaluated at
+\newcommand{\goesto}{\rightarrow} % goes to
+\newcommand{\clapstack}[1]{\mathclap{\substack{#1}}} % for giant subscripts
 
 % shortcuts for matrices
 \newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}} 
@@ -129,13 +133,15 @@
 \newcommand{\psub}[1]{{}_{#1}\!} % allow for a subscript before a variable
 \renewcommand{\d}[1]{\,\text{d} #1} % nicer looking differential operator
 \newcommand{\Rint}{\mathcal{R}} % Riemann integrable
-\renewcommand{\v}[1]{\mathbf{#1}} % vector
+\renewcommand{\v}[1]{\bm{#1}} % vector
+\renewcommand{\m}[1]{\bm{#1}} % matrix
 \renewcommand{\t}[1]{\textsf{#1}} % tensor
 \renewcommand{\P}{\mathbb{P}} % probability
 \newcommand{\E}{\mathbb{E}} % expectation
 \renewcommand{\L}{\mathcal{L}} % laplace / lagrangian
 \renewcommand{\H}{\mathcal{H}} % hypothesis
 \newcommand{\J}{\v J} % jacobian
+\newcommand{\U}{\mathcal{U}} % uniform distribution
 \renewcommand{\I}{\mathbb{I}} % identity
 \newcommand{\1}{\mathbb{1}} % indicator function
 \newcommand{\union}{\cup} % actually have a union command
@@ -147,7 +153,6 @@
 \let\foralltemp\forall
 \renewcommand{\exists}{{\existstemp~}} % better spaced exists
 \renewcommand{\forall}{{\foralltemp~}} % better spaced forall
-
 \newcommand{\bigO}{\mathcal{O}} % big o
 \newcommand{\normal}{\mathcal{N}} % normal distribution
 \newcommand{\uniform}{\mathcal{U}} % uniform distribution
