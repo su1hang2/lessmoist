@@ -1,7 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{lessmoist}
 
+\RequirePackage{iftex}
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=lm, prefix=lm@}
+\DeclareBoolOption{tufte}
+
 \RequirePackage{amsmath,amssymb}
+\RequirePackage{enumitem}
+\RequirePackage{hyperref}
 \RequirePackage{mathdots}
 \RequirePackage{mathtools}
 \RequirePackage[makeroom]{cancel}
@@ -17,42 +24,39 @@
 \RequirePackage{upgreek}
 \RequirePackage{url}
 
-\makeatletter
-% Paragraph indentation and separation for normal text
-\renewcommand{\@tufte@reset@par}{%
-  \setlength{\RaggedRightParindent}{0em}%
-  \setlength{\JustifyingParindent}{0em}%
-  \setlength{\parindent}{0em}%
-  \setlength{\parskip}{1em}%
-}
-\@tufte@reset@par
+\ProcessKeyvalOptions*
 
-% Paragraph indentation and separation for marginal text
-\renewcommand{\@tufte@margin@par}{%
-  \setlength{\RaggedRightParindent}{0em}%
-  \setlength{\JustifyingParindent}{0em}%
-  \setlength{\parindent}{0em}%
-  \setlength{\parskip}{1em}%
-}
-\makeatother
-
-\makeatletter
-\renewcommand*\env@matrix[1][\arraystretch]{%
-  \edef\arraystretch{#1}%
-  \hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
-  \array{*\c@MaxMatrixCols c}}
-\makeatother
-
-\RequirePackage{enumitem}
-\setlist[enumerate]{label=(\alph*), style=multiline, leftmargin=1.5pc}
-\setlist[enumerate]{label=(\alph*), style=multiline, leftmargin=1.5pc}
-
-\RequirePackage{hyperref}
-
-\RequirePackage[sc,osf]{mathpazo}
-\linespread{1.05}         % Palladio needs more leading (space between lines)
-\RequirePackage[T1]{fontenc}
+\iflm@tufte
+  \makeatletter
+  % Paragraph indentation and separation for normal text
+  \renewcommand{\@tufte@reset@par}{%
+    \setlength{\RaggedRightParindent}{0em}%
+    \setlength{\JustifyingParindent}{0em}%
+    \setlength{\parindent}{0em}%
+    \setlength{\parskip}{1em}%
+  }
+  \@tufte@reset@par
+  % Paragraph indentation and separation for marginal text
+  \renewcommand{\@tufte@margin@par}{%
+    \setlength{\RaggedRightParindent}{0em}%
+    \setlength{\JustifyingParindent}{0em}%
+    \setlength{\parindent}{0em}%
+    \setlength{\parskip}{1em}%
+  }
+  \makeatother
+  \makeatletter
+  \renewcommand*\env@matrix[1][\arraystretch]{%
+    \edef\arraystretch{#1}%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+    \array{*\c@MaxMatrixCols c}}
+  \makeatother
+  \setlist[enumerate]{label=(\alph*), style=multiline, leftmargin=1.5pc}
+  \setlist[enumerate]{label=(\alph*), style=multiline, leftmargin=1.5pc}
+  \RequirePackage[sc,osf]{mathpazo}
+  \linespread{1.05}         % Palladio needs more leading (space between lines)
+  \RequirePackage[T1]{fontenc}
+\fi
 
 % Define math environments
 % e.g. \begin{theorem} blah \end{theorem}
@@ -90,7 +94,7 @@
     {\vspace{0.5em}\noindent \smallcaps{Answer}}
     {}
 
-% Shortcuts to math commands to make notetaking easier
+% shortcuts to math commands to make notetaking easier
 \newcommand{\norm}[1]{\left\|#1\right\|} % auto-sized norm
 \newcommand{\unnorm}[1]{\|#1\|} % normal sized norm
 \newcommand{\abs}[1]{\left|#1\right|} % auto-sized absolute signs
@@ -98,7 +102,7 @@
 \newcommand{\p}[1]{\left(#1\right)} % auto-sized parentheses
 \renewcommand{\b}[1]{\left[ #1 \right]} % auto-sized brackets
 \newcommand{\B}[1]{\left\{#1\right\}} % auto-sized braces
-\newcommand{\inner}[1]{\left\langle#1\right\rangle} % auto-sized angled brackets
+\newcommand{\inner}[1]{\left\langle#1\right\rangle} % auto-sized angle brackets
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor} % auto-sized floor signs
 \newcommand{\sfrac}[2]{{}^{#1}\!/_{\!#2}} % slashed fractions
 \newcommand{\evalat}[2]{\left. #1 \right\rvert_{#2}} % evaluated at
