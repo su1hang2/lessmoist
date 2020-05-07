@@ -164,6 +164,7 @@
 \newcommand{\uniform}{\mathcal{U}} % uniform distribution
 
 % declare math operators so that you don't have to keep doing \text{blah}
+\DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\prox}{prox}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\erf}{erf}
@@ -183,13 +184,12 @@
 \newcommand{\alignexplain}[1]{&&\text{\footnotesize{#1}}}
 
 % TEXT-MODE COMMANDS
-
-\newcommand{\NB}[1][0.3]{N\kern-#1em B }
-
 %% ordinal indicators
 \newcommand{\st}{\textsuperscript{st}}
 \newcommand{\nd}{\textsuperscript{nd}}
 \newcommand{\rd}{\textsuperscript{rd}}
 \renewcommand{\th}{\textsuperscript{th}}
+% text shortcuts
+\newcommand\NB[1][0.3]{{N}\kern-#1em{B}{ }}
 
 \endinput
